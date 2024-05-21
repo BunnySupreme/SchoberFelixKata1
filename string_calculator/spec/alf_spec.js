@@ -34,4 +34,8 @@ describe('Alf', function() {
 		expect(alf.findSpaceship("..........\n..........\n..........\n.......X..\n..........\n..........")).toEqual([7,2]);
 	});
 
+    it('should return "Invalid input" for a string of "Invalid input"', function() {
+		expect(alf.findSpaceship("Invalid input")).toEqual("Invalid input");
+	});
+
 });
