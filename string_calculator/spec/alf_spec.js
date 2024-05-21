@@ -6,4 +6,8 @@ describe('Alf', function() {
 		expect(alf.findSpaceship('')).toEqual("Spaceship lost forever.");
 	});
 
+    it('should return [0,0] for a string of "X"', function() {
+		expect(alf.findSpaceship('X')).toEqual([0,0]);
+	});
+
 });
