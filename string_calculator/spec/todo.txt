@@ -7,3 +7,11 @@ Todo List
 „1,5,27,45“ => 78
 „1,10,100,1000,10000“ => 11111
 
+Todo List
+"" => "Spaceship lost forever."
+"X" => [0,0]
+"." => "Spaceship lost forever."
+"........X." => [8,0]
+"...X......\n.........." => [3,1]
+"..........\n..........\n..........\n.......X..\n..........\n.........." =>  [7, 2]
+"Invalid input" => "Spaceship lost forever."
