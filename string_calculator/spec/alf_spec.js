@@ -22,4 +22,8 @@ describe('Alf', function() {
 		expect(alf.findSpaceship('..........')).toEqual("Spaceship lost forever.");
 	});
 
+    it('should return [3,1] for a string of "...X......\n.........."', function() {
+		expect(alf.findSpaceship("...X......\n..........")).toEqual([3,1]);
+	});
+
 });
