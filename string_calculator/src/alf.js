@@ -6,6 +6,7 @@ Alf.prototype.findSpaceship = function(map) {
 	let xCoordinate = 0;
 	let emptyField = '.'
 	let spaceshipField = 'X'
+	let foundSpaceship = false;
 	if (map.length === 0 || map === emptyField)
 	{
 		result = failureText
@@ -15,10 +16,16 @@ Alf.prototype.findSpaceship = function(map) {
 	{
 		if (map[i] === spaceshipField)
 		{
+			foundSpaceship = true;
 			break;
 		}
 
 		result[xCoordinate]++;
+	}
+
+	if (foundSpaceship === false)
+	{
+		result = failureText
 	}
 
 	return result
