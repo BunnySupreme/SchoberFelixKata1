@@ -7,5 +7,9 @@ Alf.prototype.findSpaceship = function(map) {
 		{
 			result = failureText
 		}
+	else if (map === '.')
+		{
+			result = failureText
+		}
 	return result
 };
