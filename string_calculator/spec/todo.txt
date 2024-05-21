@@ -16,4 +16,4 @@ Todo List
 "...X......\n.........." => [3,1]
 "..........\n...X......" => [3,0]
 "..........\n..........\n..........\n.......X..\n..........\n.........." =>  [7, 2]
-"Invalid input" => "Spaceship lost forever."
+"Invalid input" => "Invalid input"
