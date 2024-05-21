@@ -18,4 +18,8 @@ describe('Alf', function() {
 		expect(alf.findSpaceship('........X.')).toEqual([8,0]);
 	});
 
+    it('should return "Spaceship lost forever." for a string of ".........."', function() {
+		expect(alf.findSpaceship('..........')).toEqual("Spaceship lost forever.");
+	});
+
 });
