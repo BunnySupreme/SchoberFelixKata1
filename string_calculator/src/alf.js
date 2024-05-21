@@ -4,7 +4,9 @@ Alf.prototype.findSpaceship = function(map) {
 	let failureText = "Spaceship lost forever."
 	let result = [ 0, 0 ]
 	let xCoordinate = 0;
+	let yCoordinate = 1;
 	let spaceshipField = 'X'
+	let lineBreak = '\n'
 	let foundSpaceship = false;
 
 	//looking for spaceship
@@ -19,9 +21,9 @@ Alf.prototype.findSpaceship = function(map) {
 		result[xCoordinate]++;
 	}
 
-	if (map.includes('\n'))
+	if (map.includes(lineBreak))
 	{
-		result[1]++
+		result[yCoordinate]++
 	}
 
 	//case where no spaceship was found
