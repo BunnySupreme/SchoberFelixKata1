@@ -12,7 +12,7 @@ Alf.prototype.findSpaceship = function(map) {
 	//initialize max yCoordinate
 	if (map.includes(lineBreak))
 	{
-		result[yCoordinate]++
+		result[yCoordinate]+= map.match(/\n/g).length
 	}
 
 	//looking for spaceship
