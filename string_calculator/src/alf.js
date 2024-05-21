@@ -9,5 +9,15 @@ Alf.prototype.findSpaceship = function(map) {
 			result = failureText
 		}
 
+	for (let i = 0; i < map.length; i++)
+		{
+			if (map[i] === 'X')
+			{
+				break;
+			}
+
+			result[0]++;
+		}
+
 	return result
 };
