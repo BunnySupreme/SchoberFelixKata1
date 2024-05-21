@@ -11,13 +11,15 @@ Alf.prototype.findSpaceship = function(map) {
 	let lineBreak = '\n'
 	let lineBreakRegExp = new RegExp(lineBreak, 'g')
 	let disallowedChars = new RegExp(`[^${emptyField}${spaceshipField}${lineBreak}]`);
+	let spaceShipFieldsRegExp = new RegExp(spaceshipField, 'g')
 	let foundSpaceship = false;
 
 	if (disallowedChars.test(map))
 	{
 		result = invalidInputText
 	}
-	else if ((map.match(new RegExp(spaceshipField, 'g')) || []).length > 1) 
+	// if more than one 'X', so more than one spaceship in map, invalid input
+	else if ((map.match(spaceShipFieldsRegExp) || []).length > 1) 
 	{
 		result = invalidInputText;
 	}
