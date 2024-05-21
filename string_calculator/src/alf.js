@@ -2,9 +2,10 @@
 function Alf() {}
 Alf.prototype.findSpaceship = function(map) {
 	let failureText = "Spaceship lost forever."
-	if (map.length == 0)
+	let result = [ 0, 0 ]
+	if (map.length === 0)
 		{
-			return failureText
+			result = failureText
 		}
-	else return [ 0, 0 ]
+	return result
 };
