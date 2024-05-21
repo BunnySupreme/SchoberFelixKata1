@@ -30,4 +30,8 @@ describe('Alf', function() {
 		expect(alf.findSpaceship("..........\n...X......")).toEqual([3,0]);
 	});
 
+    it('should return [7, 2] for a string of "..........\n..........\n..........\n.......X..\n..........\n.........."', function() {
+		expect(alf.findSpaceship("..........\n..........\n..........\n.......X..\n..........\n..........")).toEqual([7,2]);
+	});
+
 });
