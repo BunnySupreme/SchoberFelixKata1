@@ -46,4 +46,8 @@ describe('Alf', function() {
 		expect(alf.findSpaceship("..../....")).toEqual("Invalid input");
 	});
 
+    it('should return "Invalid input" for a string of ".....XX.."', function() {
+		expect(alf.findSpaceship(".....XX..")).toEqual("Invalid input");
+	});
+
 });
