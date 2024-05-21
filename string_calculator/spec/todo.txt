@@ -17,3 +17,6 @@ Todo List
 "..........\n...X......" => [3,0]
 "..........\n..........\n..........\n.......X..\n..........\n.........." =>  [7, 2]
 "Invalid input" => "Invalid input"
+"....n...." => "Invalid input"
+".....\..." => "Invalid input"
+".....XX.." => "Invalid input"
