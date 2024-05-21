@@ -19,6 +19,11 @@ Alf.prototype.findSpaceship = function(map) {
 		result[xCoordinate]++;
 	}
 
+	if (map.includes('\n'))
+	{
+		result[1]++
+	}
+
 	//case where no spaceship was found
 	if (foundSpaceship === false)
 	{
