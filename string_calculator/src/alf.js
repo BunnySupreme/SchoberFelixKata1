@@ -13,9 +13,16 @@ Alf.prototype.findSpaceship = function(map) {
 	let disallowedChars = new RegExp(`[^${emptyField}${spaceshipField}${lineBreak}]`);
 	let foundSpaceship = false;
 
-	if (disallowedChars.test(map)) {
+	if (disallowedChars.test(map))
+	{
 		result = invalidInputText
-	} else {
+	}
+	else if ((map.match(new RegExp(spaceshipField, 'g')) || []).length > 1) 
+	{
+		result = invalidInputText;
+	}
+	else 
+	{
 		//initialize max yCoordinate
 		if (map.includes(lineBreak))
 		{
