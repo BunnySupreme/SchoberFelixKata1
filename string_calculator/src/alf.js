@@ -9,6 +9,11 @@ Alf.prototype.findSpaceship = function(map) {
 	let lineBreak = '\n'
 	let foundSpaceship = false;
 
+	if (map.includes(lineBreak))
+	{
+		result[yCoordinate]++
+	}
+
 	//looking for spaceship
 	for (let i = 0; i < map.length; i++)
 	{
@@ -17,14 +22,18 @@ Alf.prototype.findSpaceship = function(map) {
 			foundSpaceship = true;
 			break;
 		}
+
+		if (map[i] === lineBreak)
+		{
+			result[xCoordinate] = 0
+			result[yCoordinate]--
+			i++
+		}
 		
-		result[xCoordinate]++;
+		result[xCoordinate]++
 	}
 
-	if (map.includes(lineBreak))
-	{
-		result[yCoordinate]++
-	}
+	
 
 	//case where no spaceship was found
 	if (foundSpaceship === false)
