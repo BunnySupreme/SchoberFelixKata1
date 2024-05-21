@@ -2,17 +2,19 @@
 function Alf() {}
 Alf.prototype.findSpaceship = function(map) {
 	let failureText = "Spaceship lost forever."
+	let invalidInputText = "Invalid input"
 	let result = [ 0, 0 ]
 	let xCoordinate = 0;
 	let yCoordinate = 1;
+	let emptyField = '.'
 	let spaceshipField = 'X'
 	let lineBreak = '\n'
 	let lineBreakRegExp = new RegExp(lineBreak, 'g')
-	let disallowedChars = new RegExp(`[^.${spaceshipField}${lineBreak}]`);
+	let disallowedChars = new RegExp(`[^${emptyField}${spaceshipField}${lineBreak}]`);
 	let foundSpaceship = false;
 
 	if (disallowedChars.test(map)) {
-		result = "Invalid input"
+		result = invalidInputText
 	} else {
 		//initialize max yCoordinate
 		if (map.includes(lineBreak))
