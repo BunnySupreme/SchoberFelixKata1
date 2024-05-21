@@ -7,12 +7,14 @@ Alf.prototype.findSpaceship = function(map) {
 	let yCoordinate = 1;
 	let spaceshipField = 'X'
 	let lineBreak = '\n'
+	let lineBreakRegExp = new RegExp(lineBreak, 'g')
 	let foundSpaceship = false;
 
 	//initialize max yCoordinate
 	if (map.includes(lineBreak))
 	{
-		result[yCoordinate]+= map.match(/\n/g).length
+		let numberOfLineBreaks = map.match(lineBreakRegExp).length
+		result[yCoordinate]+= numberOfLineBreaks
 	}
 
 	//looking for spaceship
