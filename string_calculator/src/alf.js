@@ -8,43 +8,50 @@ Alf.prototype.findSpaceship = function(map) {
 	let spaceshipField = 'X'
 	let lineBreak = '\n'
 	let lineBreakRegExp = new RegExp(lineBreak, 'g')
+	let disallowedChars = new RegExp(`[^.${spaceshipField}${lineBreak}]`);
 	let foundSpaceship = false;
 
-	//initialize max yCoordinate
-	if (map.includes(lineBreak))
-	{
-		let numberOfLineBreaks = map.match(lineBreakRegExp).length
-		result[yCoordinate]+= numberOfLineBreaks
-	}
-
-	//looking for spaceship
-	for (let i = 0; i < map.length; i++)
-	{
-		if (map[i] === spaceshipField)
+	if (disallowedChars.test(map)) {
+		result = "Invalid input"
+	} else {
+		//initialize max yCoordinate
+		if (map.includes(lineBreak))
 		{
-			foundSpaceship = true;
-			break;
+			let numberOfLineBreaks = map.match(lineBreakRegExp).length
+			result[yCoordinate]+= numberOfLineBreaks
 		}
-
-		if (map[i] === lineBreak)
+	
+		//looking for spaceship
+		for (let i = 0; i < map.length; i++)
 		{
-			result[xCoordinate] = 0
-			//go down one yCoordinate (since it is lower in the map)
-			result[yCoordinate]--
-			//increment i by one more, to skip past the 'n' of '\n'
-			i++
+			if (map[i] === spaceshipField)
+			{
+				foundSpaceship = true;
+				break;
+			}
+	
+			if (map[i] === lineBreak)
+			{
+				result[xCoordinate] = 0
+				//go down one yCoordinate (since it is lower in the map)
+				result[yCoordinate]--
+				//increment i by one more, to skip past the 'n' of '\n'
+				i++
+			}
+			
+			result[xCoordinate]++
 		}
+	
 		
-		result[xCoordinate]++
+	
+		//case where no spaceship was found
+		if (foundSpaceship === false)
+		{
+			result = failureText
+		}
 	}
 
 	
-
-	//case where no spaceship was found
-	if (foundSpaceship === false)
-	{
-		result = failureText
-	}
 
 	return result
 };
